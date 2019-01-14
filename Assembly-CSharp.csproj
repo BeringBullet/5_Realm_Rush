@@ -60,9 +60,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Block.cs" />
     <Compile Include="Assets\CudeEditor.cs" />
     <Compile Include="Assets\EnemyMovement.cs" />
+    <Compile Include="Assets\PathFinder.cs" />
+    <Compile Include="Assets\Waypoint.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>E:/bering/Unity/5_Realm_Rush/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
