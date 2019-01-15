@@ -65,7 +65,9 @@
     <Compile Include="Assets\Scripts\EnemyMovement.cs" />
     <Compile Include="Assets\Scripts\EnemySpawner.cs" />
     <Compile Include="Assets\Scripts\PathFinder.cs" />
+    <Compile Include="Assets\Scripts\playerHealth.cs" />
     <Compile Include="Assets\Scripts\Tower.cs" />
+    <Compile Include="Assets\Scripts\TowerFactory.cs" />
     <Compile Include="Assets\Scripts\Waypoint.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>E:/bering/Unity/5_Realm_Rush/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>

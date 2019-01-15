@@ -12,7 +12,7 @@ public class Tower : MonoBehaviour
 
     //State
     Transform targetEnemy;
-
+    public Waypoint currentBase;
     // Update is called once per frame
     void Update()
     {
