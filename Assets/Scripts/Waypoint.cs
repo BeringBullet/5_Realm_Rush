@@ -6,6 +6,8 @@ public class Waypoint : MonoBehaviour
 {
     public bool isExplored = false;
     public Waypoint exploredFrom;
+    public bool isPlaceable = true;
+    [SerializeField] Tower towerMesh;
 
     const int gridSize = 10;
     public Vector2Int GetGridPos => new Vector2Int(
@@ -15,9 +17,20 @@ public class Waypoint : MonoBehaviour
 
     public int GridSize => gridSize;
 
-    public void SetTopColor(Color color)
+    private void OnMouseOver()
     {
-        MeshRenderer topMeshRenderer =  transform.Find("Top").GetComponent<MeshRenderer>();
-        topMeshRenderer.material.color = color;
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (isPlaceable)
+            {
+                Instantiate(towerMesh, transform.position, Quaternion.identity);
+                isPlaceable = false;
+                print(gameObject.name);
+            }
+            else
+            {
+                print("not placeable");
+            }
+        }
     }
 }
