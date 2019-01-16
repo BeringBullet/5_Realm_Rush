@@ -11,9 +11,11 @@ public class EnemyDamage : MonoBehaviour
     [SerializeField] AudioClip hitSFX;
     [SerializeField] AudioClip deathSFX;
 
+    AudioSource audioSource;
     int hitPoints = 10;
     private void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         var prop = FindObjectOfType<Properties>();
         hitPoints = prop.EnemyHealth;
     }
@@ -30,14 +32,14 @@ public class EnemyDamage : MonoBehaviour
     {
         hitParticlePrefab.Play();
         hitPoints = hitPoints - 1;
-        GetComponent<AudioSource>().PlayOneShot(hitSFX);
+        audioSource.PlayOneShot(hitSFX);
     }
 
     private void KillEnemy()
     {
         createDeathvfx();
         gameObject.SetActive(false);
-        GetComponent<AudioSource>().PlayOneShot(deathSFX);
+        audioSource.PlayOneShot(deathSFX);
         Destroy(gameObject,deathSFX.length);
     }
 
