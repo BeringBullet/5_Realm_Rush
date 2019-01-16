@@ -38,8 +38,7 @@ public class EnemyDamage : MonoBehaviour
     private void KillEnemy()
     {
         createDeathvfx();
-        gameObject.SetActive(false);
-        audioSource.PlayOneShot(deathSFX);
+        AudioSource.PlayClipAtPoint(deathSFX, Camera.main.transform.position, audioSource.volume);
         Destroy(gameObject,deathSFX.length);
     }
 

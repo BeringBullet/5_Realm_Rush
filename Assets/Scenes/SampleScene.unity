@@ -2115,7 +2115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7df499d4f63bc00429f44d5fa4d51570, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyHealth: 10
+  enemyHealth: 2
   secondsBetweenSpawns: 2
   movementPeriod: 0.5
   attackRange: 30
