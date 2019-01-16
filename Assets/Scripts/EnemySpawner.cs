@@ -5,15 +5,20 @@ using UnityEngine.UI;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [Range(0.1f, 120)] [SerializeField] float secondsBetweenSpawns = 4f;
     [SerializeField] EnemyMovement enemyPrefab;
     [SerializeField] Transform parentFolder;
     [SerializeField] Text EnemySpawnedText;
-    int score;
 
+    int score;
+    float secondsBetweenSpawns = 4f;
     bool isrunning = true;
     // Start is called before the first frame update
-    void Start() => StartCoroutine(SpawnEnemy());
+    void Start()
+    {
+        var prop = FindObjectOfType<Properties>();
+        secondsBetweenSpawns = prop.SecondsBetweenSpawns;
+        StartCoroutine(SpawnEnemy());
+    }
 
     IEnumerator SpawnEnemy()
     {

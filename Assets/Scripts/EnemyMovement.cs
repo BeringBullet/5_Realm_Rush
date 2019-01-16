@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    [Range(.1f,2f)] [SerializeField] float movementPeriod = .5f;
     [SerializeField] ParticleSystem goalParticle;
+    float movementPeriod = .5f;
+
     // Start is called before the first frame update
     void Start()
     {
+        var prop = FindObjectOfType<Properties>();
+        movementPeriod = prop.MovementPeriod;
+
         PathFinder pathFinder = FindObjectOfType<PathFinder>();
         var path = pathFinder.GetPath();
         StartCoroutine(FollowPath(path));

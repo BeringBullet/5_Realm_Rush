@@ -7,15 +7,17 @@ public class Tower : MonoBehaviour
 {
 
     [SerializeField] Transform objectToPan;
-    [SerializeField] float attackRange = 10f;
     [SerializeField] ParticleSystem projectileParticle;
 
-    //State
+
+    float attackRange = 10f;
     Transform targetEnemy;
     public Waypoint currentBase;
     // Update is called once per frame
     void Update()
     {
+        var prop = FindObjectOfType<Properties>();
+        attackRange = prop.AttackRange;
         setTargetEnemy();
 
         if (targetEnemy)

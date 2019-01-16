@@ -6,10 +6,15 @@ using UnityEngine;
 public class EnemyDamage : MonoBehaviour
 {
     [SerializeField] Collider collisionMesh;
-    [SerializeField] int hitPoints = 2;
     [SerializeField] ParticleSystem hitParticlePrefab;
     [SerializeField] ParticleSystem deathParticlePrefab;
 
+    int hitPoints = 10;
+    private void Start()
+    {
+        var prop = FindObjectOfType<Properties>();
+        hitPoints = prop.EnemyHealth;
+    }
     private void OnParticleCollision(GameObject other)
     {
         ProcessHit();
